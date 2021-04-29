@@ -7,3 +7,11 @@ Example of backend process in this project
 - storing or updating records in a database (Ex. User account information).
 - encrypting and decrypting data (Passwords).
 - processing user input via JavaScript.
+
+## Tech Stack
+Languages/Frameworks: 
+ - Laravel 
+ - mySql
+ Environments:
+ - postman
+ - codeanywhere
