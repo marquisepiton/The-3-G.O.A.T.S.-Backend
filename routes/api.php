@@ -2,6 +2,8 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Models\User;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,7 +21,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 // User CRUD
 //Create
-Route::post('/user/create',[App\Http\Controllers\UserController::class,'create']);
+Route::post('/register',[App\Http\Controllers\UserController::class,'register']);
 
 // Read 
 Route::get('/users/all',[App\Http\Controllers\UserController::class, 'index']);

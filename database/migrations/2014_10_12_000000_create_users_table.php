@@ -23,7 +23,7 @@ class CreateUsersTable extends Migration
             $table->timestamps();
             $table->string('fanof');
             $table->string('picture');
-            $table->string('favoriteTeam');
+            $table->string('favoriteteam');
         });
     }
 
