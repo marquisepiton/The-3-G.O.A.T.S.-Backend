@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Models\User;
+use App\Models\Team;
 use App\Http\Controllers\UserController;
 
 /*
@@ -32,3 +33,8 @@ Route::post('/user/{id}/update',[App\Http\Controllers\UserController::class,'upd
 // Delete
 Route::get('/user/{id}/delete',[App\Http\Controllers\UserController::class,'destroy']);
 
+
+// Team CRUD
+
+// Read 
+Route::get('/team/all',[App\Http\Controllers\TeamController::class, 'index']);

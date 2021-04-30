@@ -8,4 +8,15 @@ use Illuminate\Database\Eloquent\Model;
 class Team extends Model
 {
     use HasFactory;
+    protected $table = 'teams';
+    protected $primaryKey = 'id';
+    public $incrementing = true;
+    public $timestamps = true;
+    
+    
+    
+    protected $fillable = [
+        'teamname',
+        
+    ];
 }
