@@ -30,7 +30,6 @@ class UserFactory extends Factory
             'password' => 'changeme', // password
             'remember_token' => Str::random(10),
             'fanof' => 'lebron',
-            'picture' => 'a picture',
             'favoriteteam' => 'lakers',
         ];
     }

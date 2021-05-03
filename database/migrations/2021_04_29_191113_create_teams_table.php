@@ -9,13 +9,12 @@ class CreateTeamsTable extends Migration
     /**
      * Run the migrations.
      *
-     * @return void
+     * @return voidx
      */
     public function up()
     {
         Schema::create('teams', function (Blueprint $table) {
             $table->id();
-           
             $table->string('teamname');
             $table->timestamps();
         });

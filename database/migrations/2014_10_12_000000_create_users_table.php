@@ -22,7 +22,6 @@ class CreateUsersTable extends Migration
             $table->rememberToken();
             $table->timestamps();
             $table->string('fanof');
-            $table->string('picture');
             $table->string('favoriteteam');
         });
     }
