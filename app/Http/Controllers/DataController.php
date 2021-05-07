@@ -8,6 +8,18 @@ use Illuminate\Support\Facades\DB;
 class DataController extends Controller
 {
     // =================================== General Stats Controllers ===============================================
+    
+    
+    public function statstotal($column)
+    {
+       $results =  DB::table('regularseasontotals')->select($column)->where('season', '=', 'Career')->get();
+        return $results->toArray();
+        
+           
+    }
+    
+    
+    
     public function postseasonaverages()
     {
         $postseasonaverages = DB::table('postseasonaverages')->get();
@@ -25,15 +37,24 @@ class DataController extends Controller
     }
     public function regularseasontotals()
     {
-        $regularseasontotals = DB::table('regularseasontotals')->get();
-        return $regularseasontotals;
+        $result  =  DB::table('regularseasontotals')->get();
+        return $result;
+        
     }
+    public function playerregularseasontotals($id)
+    {
+        return  DB::table('regularseasontotals')->where('player', $id)->get();
+        
+        
+    }
+        
+  
     // ==============================================================================================================
     // ==================================== Lebron Stats Controllers ================================================
-    public function lebronregularseasonaverages()
+    public function lebronsregularseasonaverages()
     {
-        $lebronsregularseasonaverage = DB::table('regularseasonaverages')->where('player','1')->get();
-        return $lebronsregularseasonaverage; 
+        $lebronsregularseasonaverages = DB::table('regularseasonaverages')->where('player','1')->get();
+        return $lebronsregularseasonaverages; 
     }
     public function lebronregularseasontotals()
     {
@@ -82,7 +103,7 @@ class DataController extends Controller
     }
     public function michealregularseasontotals()
     {
-        $michealregularseasontotals = DB::table('regularseasontotals')->where('player','3')->get();
+        $michealregularseasontotals = DB::table('regularseasontotals')->where('season','Career')->get('');
         return $michealregularseasontotals;
     }
     public function michealpostseasonaverages()
@@ -95,6 +116,12 @@ class DataController extends Controller
         $michealpostseasontotals = DB::table('postseasontotals')->where('player','3')->get();
         return $michealpostseasontotals;
     }
-    // ================================================================================================================
+    // ===========================================Specific Stats Controllers=====================================================================
+    
+    public function totalPoints()
+    {
+        $michealpostseasontotals = DB::table('regularseasontotals')->where('season','career')->get();
+        return $michealpostseasontotals;
+    }
     
 }

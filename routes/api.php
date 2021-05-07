@@ -41,7 +41,15 @@ Route::get('/team/all',[TeamController::class, 'index']);
 // This is for register page 
 Route::get('/player/all',[PlayerController::class,'index']);
 
+
+
+
+Route::get('/stats/player/regular/{column}', [DataController:: class, 'statstotal']);
+
+
+
 // ================================ General ======================================================================
+Route::get('/stats/regular/{id}',[DataController::class,'playerregularseasontotals']);
 // Get postseason average
 Route::get('/stats/postseason-averages',[DataController::class, 'postseasonaverages']);
 // Get postseason total
@@ -49,7 +57,7 @@ Route::get('/stats/postseason-totals',[DataController::class, 'postseasontotals'
 // Get regular season averages 
 Route::get('/stats/regular-season-averages',[DataController::class, 'regularseasonaverages']);
 // Get regular season totals
-Route::get('/stats/regular-season-totals',[DataController::class, 'regularseasontotals']);
+Route::get('/stats/regularseasontotals',[DataController::class, 'regularseasontotals']);
 // ===============================================================================================================
 
 
