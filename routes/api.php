@@ -9,6 +9,8 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\TeamController;
 use App\Http\Controllers\PlayerController;
 use App\Http\Controllers\DataController;
+use App\Http\Controllers\ThreadController;
+use App\Http\Controllers\DiscussionController;
 
 
 /*
@@ -97,6 +99,12 @@ Route::get('/stats/micheal-postseason-averages', [DataController::class,'micheal
 Route::get('/stats/micheal-postseason-totals', [DataController::class,'michealpostseasontotals']);
 // ==================================================================================================
 
+// ===========================================Discussions==============================================
+
+Route::get('/discussions/', [DiscussionController:: class, 'index']);
+
+
+Route::post('/discussions/create', [DiscussionController:: class, 'create']);
 
 
 
