@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Discussion;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class DiscussionController extends Controller
 {
@@ -14,7 +15,7 @@ class DiscussionController extends Controller
      */
     public function index()
     {
-        //
+         return Discussion::all();
     }
 
     /**
@@ -22,10 +23,31 @@ class DiscussionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        $validator = Validator::make($request->all(),[
+            'title' => 'required',
+            'content' => 'required',
+            
+        ]);
+        
+        if($validator->fails()){
+            return response(['Error, Try again'],422);
+        }
+        $input = $request->all();
+       
+        $discussion = Discussion::create($input);
+        
+        $validator = Validator::make($request->all(), [
+            'title' => 'required',
+            'content' => 'required',
+            
+        ]);  
+
+
+        return response("Discussion has been created.");
     }
+    
 
     /**
      * Store a newly created resource in storage.
@@ -33,10 +55,10 @@ class DiscussionController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        //
-    }
+//     public function store(Request $request)
+//     {
+        
+//     }
 
     /**
      * Display the specified resource.

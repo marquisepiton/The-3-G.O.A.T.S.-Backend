@@ -8,4 +8,17 @@ use Illuminate\Database\Eloquent\Model;
 class Discussion extends Model
 {
     use HasFactory;
+    protected $table = 'discussions';
+    protected $primaryKey = 'id';
+    public $incrementing = true;
+    public $timestamps = true;
+    
+    protected $fillable = [
+        'title',
+        'content',
+    ];
+    
+   
+
+
 }

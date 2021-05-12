@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Thread extends Model
 {
     use HasFactory;
+    protected $table = 'threads';
+    protected $primaryKey = 'id';
+    public $incrementing = true;
+    public $timestamps = true;
 }

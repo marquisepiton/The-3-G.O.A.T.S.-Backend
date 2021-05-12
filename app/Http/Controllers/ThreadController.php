@@ -22,9 +22,10 @@ class ThreadController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Subject $subject)
     {
-        //
+        
+        
     }
 
     /**
@@ -35,7 +36,13 @@ class ThreadController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'title' => 'required',
+            
+        ]);
+
+
+        return response($thread, 201);
     }
 
     /**
@@ -44,9 +51,9 @@ class ThreadController extends Controller
      * @param  \App\Models\Thread  $thread
      * @return \Illuminate\Http\Response
      */
-    public function show(Thread $thread)
+    public function show()
     {
-        //
+        return Thread::all();
     }
 
     /**
